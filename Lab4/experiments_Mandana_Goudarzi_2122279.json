@@ -1,0 +1,51 @@
+{
+    "experiment_0": {
+        "model": "distilbert/distilbert-base-uncased",
+        "hyperparameters": {
+            "learning_rate": 2e-05,
+            "batch_size": 16,
+            "num_train_epochs": 3
+        },
+        "f1_score": 0.9521,
+        "precision": 0.9844,
+        "recall": 0.922,
+        "description": "This experiment fine-tuned DistilBERT with a learning rate of 2e-5, batch size 16, and 3 epochs. It achieved the highest precision and strong recall, offering a great balance between accurate detection and low false positives."
+    },
+    "experiment_1": {
+        "model": "distilbert/distilbert-base-uncased",
+        "hyperparameters": {
+            "learning_rate": 2e-05,
+            "batch_size": 16,
+            "num_train_epochs": 2
+        },
+        "f1_score": 0.9526,
+        "precision": 0.9745,
+        "recall": 0.9317,
+        "description": "This setup used fewer epochs to reduce training time. It maintained excellent performance across all metrics, especially recall, making it a fast yet effective option for detecting fake content."
+    },
+    "experiment_2": {
+        "model": "distilbert/distilbert-base-uncased",
+        "hyperparameters": {
+            "learning_rate": 2e-05,
+            "batch_size": 8,
+            "num_train_epochs": 3
+        },
+        "f1_score": 0.9495,
+        "precision": 0.9843,
+        "recall": 0.9171,
+        "description": "This experiment lowered the batch size to reduce memory usage. It achieved the highest precision but slightly lower recall, making it ideal when minimizing false positives is critical."
+    },
+    "final_prediction": {
+        "model": "distilbert/distilbert-base-uncased",
+        "experiment_chosen": "experiment_0",
+        "hyperparameters": {
+            "learning_rate": 2e-05,
+            "batch_size": 16,
+            "num_train_epochs": 3
+        },
+        "f1_score": 0.9505,
+        "precision": 0.9697,
+        "recall": 0.932,
+        "description": "The final model was selected from Experiment 0 due to its highest validation precision. When applied to the test set, it continued to perform well, achieving an F1 score of 0.9505. This confirms the model\u2019s strong generalization ability across unseen disinformation data."
+    }
+}
